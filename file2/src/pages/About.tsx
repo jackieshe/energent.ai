@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { submitContactForm } from '../services/contact'
 import LoadingSpinner from '../components/LoadingSpinner'
-import { useTranslation, Trans } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import {
   EnvelopeIcon,
   CodeBracketIcon,
@@ -263,6 +263,17 @@ export default function About() {
             className="mx-auto mt-16 max-w-xl"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
+              {submitStatus.type && (
+                <div
+                  className={`rounded-md p-4 ${
+                    submitStatus.type === 'success'
+                      ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200'
+                      : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200'
+                  }`}
+                >
+                  {submitStatus.message}
+                </div>
+              )}
               <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold leading-6 text-white">
