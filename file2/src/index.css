@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@config "../tailwind.config.js";
+@tailwind reference;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  /*
+    如需全局字体色、背景色，请在 React 根组件加：
+    className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
+  */
+}
+
+/* 自定义组件（如 .btn-primary、.btn-secondary、.input-primary）已移除，请直接在 React 组件中写 className，例如：
+   <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"> 提交 </button>
+ */
